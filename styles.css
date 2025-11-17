@@ -41,31 +41,32 @@
     outline: 3px solid #e5e7eb;
     outline-offset: 2px;
 }
-/* Chat panel (hidden by default) */
+/* Utility */
 
 .hidden {
     display: none;
 }
 
+/* Chat panel */
+
 .chat-panel {
     position: fixed;
     right: 1.5rem;
-    bottom: 4.5rem;
+    bottom: 8rem; /* sits above the chat button stack */
 
     width: 320px;
-    max-height: 75vh;
+    max-height: 70vh;
 
     background: #1e293b;
     color: #e5e7eb;
 
     border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
 
     display: flex;
     flex-direction: column;
 
-    z-index: 9998;
+    z-index: 10000;
 }
 
 .chat-panel__header {
@@ -73,13 +74,14 @@
     padding: 0.75rem 1rem;
 
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 }
 
 .chat-panel__title {
-    font-size: 1rem;
     margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
 }
 
 .chat-panel__close {
@@ -88,36 +90,51 @@
     color: #e5e7eb;
     font-size: 1.25rem;
     cursor: pointer;
+    line-height: 1;
 }
 
 .chat-panel__messages {
     flex: 1;
-    padding: 1rem;
+    padding: 0.75rem 1rem;
     overflow-y: auto;
+    font-size: 0.9rem;
 }
 
 .chat-panel__input-row {
     display: flex;
-    padding: 0.75rem;
+    align-items: center;
     gap: 0.5rem;
+
+    padding: 0.75rem;
     background: #0f172a;
 }
 
 .chat-panel__input {
     flex: 1;
-    padding: 0.5rem;
-    background: #1e293b;
-    border: 1px solid #475569;
+    padding: 0.45rem 0.6rem;
     border-radius: 6px;
+    border: 1px solid #475569;
+    background: #020617;
     color: #e5e7eb;
 }
 
+.chat-panel__input:focus-visible {
+    outline: 2px solid #38bdf8;
+    outline-offset: 1px;
+}
+
 .chat-panel__send {
-    padding: 0.5rem 1rem;
-    background: #38bdf8;
-    border: none;
+    padding: 0.45rem 0.9rem;
     border-radius: 6px;
-    font-weight: 600;
+    border: none;
     cursor: pointer;
+
+    background: #38bdf8;
     color: #0f172a;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.chat-panel__send:hover {
+    background: #0ea5e9;
 }
