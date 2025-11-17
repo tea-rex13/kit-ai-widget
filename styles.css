@@ -1,0 +1,43 @@
+/* Floating chat button */
+
+.chat-toggle {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+
+    padding: 0.75rem 1rem;
+    border-radius: 999px;
+    border: none;
+
+    background: #38bdf8;
+    color: #0f172a;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+
+    z-index: 9999;
+
+    transition:
+        transform 0.15s ease-out,
+        box-shadow 0.15s ease-out,
+        background 0.15s ease-out;
+}
+
+.chat-toggle:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+    background: #0ea5e9;
+}
+
+.chat-toggle:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+
+.chat-toggle:focus-visible {
+    outline: 3px solid #e5e7eb;
+    outline-offset: 2px;
+}
