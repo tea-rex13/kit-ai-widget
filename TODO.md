@@ -1,9 +1,9 @@
 # AI Chat Widget – To-Do List
 
 ## Phase 0 – Planning
-- [ ] Define the assistant’s purpose (CV helper, coding helper, general Q&A)
-- [ ] Decide where the widget appears on the site
-- [ ] Choose a simple visual style that fits the portfolio
+- [x] Define the assistant’s purpose (CV helper, coding helper, general Q&A)
+- [x] Decide where the widget appears on the site
+- [x] Choose a simple visual style that fits the portfolio
 
 ---
 
