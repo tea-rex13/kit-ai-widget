@@ -1,12 +1,5 @@
 # AI Chat Widget – To-Do List
 
-## Phase 0 – Planning
-- [x] Define the assistant’s purpose (CV helper, coding helper, general Q&A)
-- [x] Decide where the widget appears on the site
-- [x] Choose a simple visual style that fits the portfolio
-
----
-
 ## Phase 1 – Front-end widget (no AI yet)
 
 ### Step 1: Entry button
