@@ -4,7 +4,8 @@ This project is contains a chat widget for my cv website.
 It allows any visitor to ask questions about me.
   
 There are two parts to this project:
-Client> contins styling, chat buttong, chat window, and message handling.
+
+Client> contins styling, chat button, chat window, and message handling.
 
 Server> function that sends messages to AI model and returns a reply.
 
