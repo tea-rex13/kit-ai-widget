@@ -34,3 +34,21 @@ package.json
 
 README.md
 TODO.md
+
+
+## How to use
+
+This widget is designed to be copied into an existing site.  
+Once finished, you will be able to drop the client code into any page and point it at the server function.
+
+## Development goals
+
+The aim is to:
+
+- Build something small but useful  
+- Practise clean commits  
+- Keep the code readable  
+- Show full ownership of a component from idea to deployment
+
+The full to-do list can be found in `TODO.md`.
+
