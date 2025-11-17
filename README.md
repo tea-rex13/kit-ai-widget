@@ -41,14 +41,17 @@ TODO.md
 This widget is designed to be copied into an existing site.  
 Once finished, you will be able to drop the client code into any page and point it at the server function.
 
-## Development goals
 
-The aim is to:
+Phase 0 – Design decisions
+1. Assistant purpose
 
-- Build something small but useful  
-- Practise clean commits  
-- Keep the code readable  
-- Show full ownership of a component from idea to deployment
+The assistant will act mainly as a portfolio guide:
 
-The full to-do list can be found in `TODO.md`.
+Answer questions about my skills, experience, and projects.
+
+Help visitors understand what i does, and how to contact or work with me.
+
+Handle simple questions about tools and technologies listed on the portfolio.
+
+If a question is too deep or too long, the assistant should give a short reply and suggest using direct contact instead.
 
