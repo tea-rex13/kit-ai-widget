@@ -39,10 +39,10 @@
 
 ### Step 6: Connect front-end to backend
 
-- [ ] Replace fake replies with a `fetch` call
-- [ ] Add a loading or thinking line
-- [ ] Add error handling
-- [ ] Check replies render cleanly
+- [x] Replace fake replies with a `fetch` call
+- [x] Add a loading or thinking line
+- [x] Add error handling
+- [x] Check replies render cleanly
 
 ---
 
