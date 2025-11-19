@@ -1,76 +1,61 @@
-# AI Chat Widget – To-Do List
+# Kit AI Widget – TODO
 
-## Phase 1 – Front-end widget (no AI yet)
+## Phase 1 – Widget UI and local behaviour
 
 ### Step 1: Entry button
 
 - [x] Add HTML for the floating chat button
 - [x] Add CSS for fixed bottom-right positioning
-- [x] Add base styling (size, border, hover effect)
+- [x] Add base styling (size, hover effect)
 
 ### Step 2: Chat panel structure
 
 - [x] Add hidden chat window HTML (header, messages area, input row)
-- [x] Add CSS for layout and positioning
+- [x] Add CSS for panel layout and positioning
 - [x] Add JS to open and close the panel
 
 ### Step 3: Local chat behaviour
 
 - [x] Capture user input and display messages
-- [x] Add simulated reply function
+- [x] Add simulated reply mechanism
 - [x] Auto-scroll to the newest message
 - [x] Ignore empty messages
 
 ### Step 4: Front-end AI hook
 
-- [x] Replace direct fake reply with async fetchAIResponse()
-- [x] Add typing indicator in the UI
-- [ ] Point fetchAIResponse at real backend (later)
+- [x] Replace direct fake reply with async `fetchAIResponse()`
+- [x] Add typing indicator while waiting for a reply
+- [x] Handle errors with a simple user-facing message
+- [ ] Point `fetchAIResponse()` to the real backend once the CV site has the function
 
 ---
 
-## Phase 2 – Backend: AI link
+## Phase 2 – Integration with kbb-cv site
 
-### Step 5: Server function
+### Step 5: Prepare widget for reuse
 
-- [x] Create a serverless function / backend endpoint
-- [x] Use environment variables for the API key
-- [x] Call AI model and return reply
+- [ ] Confirm widget JS and CSS are self-contained
+- [ ] Add a short usage note (how to include the script and styles on another site)
+- [ ] Confirm no API keys or environment secrets are referenced directly in this repo
 
-### Step 6: Connect front-end to backend
+### Step 6: Move backend to kbb-cv
 
-- [x] Replace fake replies with a `fetch` call
-- [x] Add a loading or thinking line
-- [x] Add error handling
-- [x] Check replies render cleanly
+- [ ] Add `netlify/functions/chat.js` to the kbb-cv project
+- [ ] Wire the function to use `OPENAI_API_KEY` from Netlify environment variables
+- [ ] Update `fetchAIResponse()` here to call the correct endpoint on the kbb-cv site (document the URL)
 
----
+### Step 7: Embed widget in kbb-cv
 
-## Phase 3 – Context and behaviour
-
-### Step 7: Kit-aware chat
-
-- [ ] Add a system prompt describing the assistant’s role
-- [ ] Add experience and project details as reference material
-- [ ] Add short-term memory per chat session
-- [ ] Add safe fallbacks for unknown questions
+- [ ] Add the floating Chat button and panel HTML into the kbb-cv layout/template
+- [ ] Include the widget JS and CSS in kbb-cv (direct files or bundled)
+- [ ] Test the chat end-to-end on `kbb-cv.netlify.app`
 
 ---
 
-## Phase 4 – Polish and deployment
+## Phase 3 – Nice-to-haves (later)
 
-### Step 8: UI and UX improvements
+- [ ] Add keyboard shortcuts (Esc to close, focus management)
+- [ ] Add basic conversation context (remember last few messages)
+- [ ] Add simple analytics hooks (how often the chat is opened, etc.)
 
-- [ ] Add close button in the header
-- [ ] Improve mobile layout
-- [ ] Refine colours and spacing
-- [ ] Add keyboard access
-- [ ] Add smooth open/close animation
-- [ ] Hide the panel on outside click
-
-### Step 9: Deployment checks
-
-- [ ] Test widget on Netlify
-- [ ] Test on mobile and tablet
-- [ ] Review load speed
-- [ ] Update the README with any new details
+---
