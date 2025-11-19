@@ -33,9 +33,9 @@
 
 ### Step 5: Server function
 
-- [ ] Create a serverless function / backend endpoint
-- [ ] Use environment variables for the API key
-- [ ] Call AI model and return reply
+- [x] Create a serverless function / backend endpoint
+- [x] Use environment variables for the API key
+- [x] Call AI model and return reply
 
 ### Step 6: Connect front-end to backend
 
