@@ -1,5 +1,4 @@
-/* Base page styling for the demo */
-
+/* Basic demo page styling */
 *,
 *::before,
 *::after {
@@ -75,7 +74,7 @@ main {
 .chat-panel {
     position: fixed;
     right: 1.5rem;
-    bottom: 8rem;
+    bottom: 8.5rem;
 
     width: 320px;
     max-height: 75vh;
@@ -169,4 +168,11 @@ main {
     background: #334155;
     color: #e5e7eb;
     align-self: flex-start;
+}
+
+/* Typing state */
+
+.message--bot.typing {
+    opacity: 0.7;
+    font-style: italic;
 }

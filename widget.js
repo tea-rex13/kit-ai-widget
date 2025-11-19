@@ -40,13 +40,15 @@ function addMessage(text, sender = 'user') {
     messageArea.scrollTop = messageArea.scrollHeight;
 }
 
-// Fake bot reply (placeholder logic)
-function fakeBotReply(userText) {
-    return `You said: ${userText}`;
+// Placeholder call that will later hit your backend
+async function fetchAIResponse(userText) {
+    // TEMP RESPONSE so you can keep testing:
+    await new Promise(resolve => setTimeout(resolve, 500));
+    return "I’m not quite wired up yet, but I heard you.";
 }
 
 // Handle form submission
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const text = input.value.trim();
@@ -54,12 +56,23 @@ form.addEventListener('submit', (e) => {
 
     // Show user message
     addMessage(text, 'user');
-
     input.value = '';
 
-    // Fake bot response
-    const reply = fakeBotReply(text);
-    setTimeout(() => {
+    // Show bot typing indicator
+    const typingMsg = document.createElement('div');
+    typingMsg.classList.add('message', 'message--bot', 'typing');
+    typingMsg.textContent = "Typing...";
+    messageArea.appendChild(typingMsg);
+    messageArea.scrollTop = messageArea.scrollHeight;
+
+    try {
+        const reply = await fetchAIResponse(text);
+
+        // Replace the typing message with the real one
+        typingMsg.remove();
         addMessage(reply, 'bot');
-    }, 400);
+    } catch (err) {
+        typingMsg.textContent = "Something went wrong.";
+        typingMsg.classList.remove('typing');
+    }
 });
