@@ -40,11 +40,28 @@ function addMessage(text, sender = 'user') {
     messageArea.scrollTop = messageArea.scrollHeight;
 }
 
-// Placeholder call that will later hit your backend
 async function fetchAIResponse(userText) {
-    // TEMP RESPONSE so you can keep testing:
-    await new Promise(resolve => setTimeout(resolve, 500));
-    return "I’m not quite wired up yet, but I heard you.";
+    // Call the Netlify serverless function
+    const res = await fetch("/.netlify/functions/chat", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ message: userText })
+    });
+
+    if (!res.ok) {
+        // Helpful error for local dev or deployment issues
+        throw new Error(`Backend error: ${res.status}`);
+    }
+
+    const data = await res.json();
+
+    if (!data || typeof data.reply !== "string") {
+        throw new Error("Backend returned an invalid response");
+    }
+
+    return data.reply;
 }
 
 // Handle form submission
