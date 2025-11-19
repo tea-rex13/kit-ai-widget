@@ -17,22 +17,27 @@
 ### Step 3: Local chat behaviour
 
 - [x] Capture user input and display messages
-- [x] Add a simple simulated reply
+- [x] Add simulated reply function
 - [x] Auto-scroll to the newest message
 - [x] Ignore empty messages
+
+### Step 4: Front-end AI hook
+
+- [x] Replace direct fake reply with async fetchAIResponse()
+- [x] Add typing indicator in the UI
+- [ ] Point fetchAIResponse at real backend (later)
 
 ---
 
 ## Phase 2 – Backend: AI link
 
-### Step 4: Server function
+### Step 5: Server function
 
-- [x] Create a serverless function or small backend route
-- [x] Add environment variables for the API key
-- [x] Write handler to send messages to an AI model and return the reply
-- [x] Add basic checks (message length etc.)
+- [ ] Create a serverless function / backend endpoint
+- [ ] Use environment variables for the API key
+- [ ] Call AI model and return reply
 
-### Step 5: Connect front-end to backend
+### Step 6: Connect front-end to backend
 
 - [ ] Replace fake replies with a `fetch` call
 - [ ] Add a loading or thinking line
@@ -43,7 +48,7 @@
 
 ## Phase 3 – Context and behaviour
 
-### Step 6: Kit-aware chat
+### Step 7: Kit-aware chat
 
 - [ ] Add a system prompt describing the assistant’s role
 - [ ] Add experience and project details as reference material
@@ -54,7 +59,7 @@
 
 ## Phase 4 – Polish and deployment
 
-### Step 7: UI and UX improvements
+### Step 8: UI and UX improvements
 
 - [ ] Add close button in the header
 - [ ] Improve mobile layout
@@ -63,7 +68,7 @@
 - [ ] Add smooth open/close animation
 - [ ] Hide the panel on outside click
 
-### Step 8: Deployment checks
+### Step 9: Deployment checks
 
 - [ ] Test widget on Netlify
 - [ ] Test on mobile and tablet
