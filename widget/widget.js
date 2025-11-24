@@ -1,0 +1,80 @@
+// Elements
+const toggleButton = document.getElementById('chat-toggle');
+const panel = document.getElementById('chat-panel');
+const closeButton = document.getElementById('chat-close');
+const form = document.getElementById('chat-form');
+const input = document.getElementById('chat-input');
+const messageArea = document.getElementById('chat-messages');
+
+// Open / close panel
+function openChat() {
+    panel.classList.remove('hidden');
+    panel.setAttribute('aria-hidden', 'false');
+}
+
+function closeChat() {
+    panel.classList.add('hidden');
+    panel.setAttribute('aria-hidden', 'true');
+}
+
+// Toggle behaviour
+toggleButton.addEventListener('click', () => {
+    const isHidden = panel.classList.contains('hidden');
+    isHidden ? openChat() : closeChat();
+});
+
+closeButton.addEventListener('click', () => {
+    closeChat();
+});
+
+// Add a message to the chat area
+function addMessage(text, sender = 'user') {
+    const msg = document.createElement('div');
+    msg.classList.add('message', `message--${sender}`);
+    msg.textContent = text;
+    messageArea.appendChild(msg);
+    messageArea.scrollTop = messageArea.scrollHeight;
+}
+
+// Fake local "AI" reply for demo purposes
+async function fetchAIResponse(userText) {
+    // Simulate a short delay
+    await new Promise(resolve => setTimeout(resolve, 500));
+
+    // Very simple canned behaviour so the demo feels alive
+    if (userText.toLowerCase().includes("kit")) {
+        return "Kit is an aspiring software engineer who built this widget.";
+    }
+
+    if (userText.toLowerCase().includes("help")) {
+        return "This is a demo. On the real site, I connect to an AI backend.";
+    }
+
+    return "Demo mode: this widget is front-end only in this repo. The live version on kbb-cv.netlify.app talks to a real AI.";
+}
+
+// Handle form submission
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const text = input.value.trim();
+    if (!text) return;
+
+    // User message
+    addMessage(text, 'user');
+    input.value = '';
+
+    // Typing indicator
+    const typingMsg = document.createElement('div');
+    typingMsg.classList.add('message', 'message--bot', 'typing');
+    typingMsg.textContent = "Typing...";
+    messageArea.appendChild(typingMsg);
+    messageArea.scrollTop = messageArea.scrollHeight;
+
+    // Get the reply (local demo)
+    const reply = await fetchAIResponse(text);
+
+    // Replace typing indicator
+    typingMsg.remove();
+    addMessage(reply, 'bot');
+});
